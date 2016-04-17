@@ -1,5 +1,6 @@
-
+#IntelliJ IDEA files
 *.iml
 .idea/*
 
+#Java file
 target/*
