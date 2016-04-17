@@ -12,6 +12,7 @@ public class JSONServiceV1 {
 
     public static final String APPLICATION_ERI_V_1 = "application/vnd.eri-v1+json;v=1";
     public static final String APPLICATION_ERI_V_0 = "application/vnd.eri-v1+json";
+    public static final String CUSTOM_V1_SOON_WILL_BE_NOT_SUPPORTED = "Custom v1: soon will be not supported";
 
     @Inject
     private Logger logger;
@@ -25,8 +26,8 @@ public class JSONServiceV1 {
     @Path("/")
     @Consumes({APPLICATION_ERI_V_1, APPLICATION_ERI_V_0})
     @Produces({APPLICATION_ERI_V_1, APPLICATION_ERI_V_0})
-    public Product getProductInJSON2() {
-        logger.warn("Custom v1: soon will be not supported");
+    public Product getProduct() {
+        logger.warn(CUSTOM_V1_SOON_WILL_BE_NOT_SUPPORTED);
 
         Product product = new Product();
         product.setName("ATHENS");
@@ -44,8 +45,8 @@ public class JSONServiceV1 {
     @Path("/")
     @Consumes({APPLICATION_ERI_V_1, APPLICATION_ERI_V_0})
     @Produces({APPLICATION_ERI_V_1, APPLICATION_ERI_V_0})
-    public Response createProductInJSON(Product product) {
-        logger.warn("Custom v1: soon will be not supported");
+    public Response createProduct(Product product) {
+        logger.warn(CUSTOM_V1_SOON_WILL_BE_NOT_SUPPORTED);
 
         product.setName(product.getName());
         String result = "Product created (from custom MIME): " + product;

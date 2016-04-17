@@ -10,6 +10,7 @@ import javax.ws.rs.core.Response;
 public class JSONServiceV2 {
 
     public static final String APPLICATION_VND_ERI_V1_JSON_V_2 = "application/vnd.eri-v1+json;v=2";
+    public static final String CUSTOM_V2_THE_NEWEST_VERSION = "Custom v2: the newest version";
     @Inject
     private Logger logger;
 
@@ -21,8 +22,8 @@ public class JSONServiceV2 {
     @Path("/")
     @Consumes(APPLICATION_VND_ERI_V1_JSON_V_2)
     @Produces(APPLICATION_VND_ERI_V1_JSON_V_2)
-    public Product getProductInJSON2() {
-        logger.info("Custom v2: the newest version");
+    public Product getProduct() {
+        logger.info(CUSTOM_V2_THE_NEWEST_VERSION);
 
         Product product = new Product();
         product.setName("EDO");
@@ -39,8 +40,8 @@ public class JSONServiceV2 {
     @Path("/")
     @Consumes(APPLICATION_VND_ERI_V1_JSON_V_2)
     @Produces(APPLICATION_VND_ERI_V1_JSON_V_2)
-    public Response createProductInCustomJSON(Product product) {
-        logger.warn("Very good custom V2");
+    public Response createProduct(Product product) {
+        logger.warn(CUSTOM_V2_THE_NEWEST_VERSION);
 
         product.setName(product.getName()+" custom MIME V2");
         String result = "Product created : " + product;

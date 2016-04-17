@@ -4,9 +4,17 @@ package com.marvin;
 
 public class Product{
 
-	String name;
-	int qty;
-	
+	private String name;
+	private int qty;
+
+	public Product() {
+	}
+
+	public Product(String name, int qty) {
+		this.name = name;
+		this.qty = qty;
+	}
+
 	public String getName() {
 		return name;
 	}

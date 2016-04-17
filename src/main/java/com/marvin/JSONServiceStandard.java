@@ -8,8 +8,9 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Path("/json/product")
-public class JSONServiceStock {
+public class JSONServiceStandard {
 
+    public static final String STANDARD_JSON = "Standard json";
     @Inject
     private Logger logger;
 
@@ -21,8 +22,8 @@ public class JSONServiceStock {
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Product getProductInAJSON2() {
-        logger.warn("Standard json");
+    public Product getProduct() {
+        logger.warn(STANDARD_JSON);
 
         Product product = new Product();
         product.setName("KYOTO");
@@ -38,8 +39,8 @@ public class JSONServiceStock {
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response createProductInAJSON(Product product) {
-        logger.warn("Standard json");
+    public Response createProduct(Product product) {
+        logger.warn(STANDARD_JSON);
 
         product.setName(product.getName());
         String result = "Product created (from standard json MIME): " + product;
