@@ -37,24 +37,6 @@ public class JSONServiceV1 {
 
     /*
     Example curl:
-    curl -H "Content-Type: application/json" -X GET "http://localhost:8080/marvin/json/product/"
-     */
-    @GET
-    @Path("/")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Product getProductInAJSON2() {
-        logger.warn("Standard json");
-
-        Product product = new Product();
-        product.setName("ATHENS json not custom");
-        product.setQty(1);
-
-        return product;
-    }
-
-    /*
-    Example curl:
     curl -H "Content-Type: application/vnd.eri-v1+json" -X POST "http://localhost:8080/marvin/json/product/" -d '{"qty":999,"name":"iPad 32"}'
     curl -H "Content-Type: application/vnd.eri-v1+json;v=1" -X POST "http://localhost:8080/marvin/json/product/" -d '{"qty":999,"name":"iPad 32"}'
      */
@@ -67,24 +49,6 @@ public class JSONServiceV1 {
 
         product.setName(product.getName());
         String result = "Product created (from custom MIME): " + product;
-
-        logger.info(result);
-        return Response.status(201).entity(product).build();
-    }
-
-    /*
-    Example curl:
-    curl -H "Content-Type: application/json" -X POST "http://localhost:8080/marvin/json/product/" -d '{"qty":999,"name":"iPad 32"}'
-     */
-    @POST
-    @Path("/")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response createProductInAJSON(Product product) {
-        logger.warn("Standard json");
-
-        product.setName(product.getName());
-        String result = "Product created (from standard json MIME): " + product;
 
         logger.info(result);
         return Response.status(201).entity(product).build();
