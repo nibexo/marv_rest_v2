@@ -1,5 +1,6 @@
 package com.marvin;
 
+import com.marvin.v1.Product;
 import org.apache.log4j.Logger;
 
 import javax.inject.Inject;

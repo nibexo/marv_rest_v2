@@ -1,5 +1,6 @@
 package com.marvin;
 
+import com.marvin.v2.Product;
 import org.apache.log4j.Logger;
 
 import javax.inject.Inject;
@@ -16,7 +17,7 @@ public class JSONServiceV2 {
 
     /*
     Example curl:
-    curl -H "Content-Type: application/vnd.eri-v1+json,v=2" -X GET "http://localhost:8080/marvin/json/product/"
+    curl -H "Content-Type: application/vnd.eri-v1+json;v=2" -X GET "http://localhost:8080/marvin/json/product/"
      */
     @GET
     @Path("/")
@@ -28,6 +29,7 @@ public class JSONServiceV2 {
         Product product = new Product();
         product.setName("EDO");
         product.setQty(2);
+        product.setSec(42);
 
         return product;
     }

@@ -4,3 +4,6 @@
 
 #Java file
 target/*
+
+#Git files
+*.orig

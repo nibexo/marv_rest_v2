@@ -2,6 +2,7 @@ package com.marvin;
 
 //import org.apache.log4j.Logger;
 
+import com.marvin.v2.Product;
 import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,8 +33,8 @@ public class JSONServiceV2Test {
 
     @Before
     public void initializeDependencies(){
-        productHanoi = new Product(HANOI, 42);
-        productVancouver = new Product(VANCOUVER, 42);
+        productHanoi = new Product(HANOI, 42, 13);
+        productVancouver = new Product(VANCOUVER, 42, 22);
         MockitoAnnotations.initMocks(this);
     }
 

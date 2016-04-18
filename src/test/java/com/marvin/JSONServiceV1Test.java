@@ -1,6 +1,7 @@
 package com.marvin;
 
 //import org.apache.log4j.Logger;
+import com.marvin.v1.Product;
 import org.junit.Before;
 import org.junit.Test;
 import org.apache.log4j.Logger;
